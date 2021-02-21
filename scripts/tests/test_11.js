@@ -1,6 +1,6 @@
 /*
 	ТЕСТ НОМЕР 11 
-	Методика «Оценка уровня интеллекта» 
+	Методика «Рекфлексивности» 
 */
 
 const headElem = document.getElementById("head");
@@ -112,36 +112,6 @@ class Answer
 		this.value = value; 
 	}
 }
-
-//Класс, представляющий результат
-class Result 
-{
-	constructor(text, value)
-	{
-		this.text = text;
-		this.value = value;
-	}
-
-	//Этот метод проверяет, достаточно ли очков набрал пользователь
-	Check(value)
-	{
-		if(this.value <= value)
-		{
-			return true;
-		}
-		else 
-		{
-			return false;
-		}
-	}
-}
-
-
-
-const results = 
-[
-	
-];
 
 //Массив с вопросами
 const questions = 
@@ -513,7 +483,7 @@ const questions =
 
 ];
 //Сам тест
-const quiz = new Quiz(2, questions, results);
+const quiz = new Quiz(2, questions);
 
 Update();
 

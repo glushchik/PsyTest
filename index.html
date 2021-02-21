@@ -1,189 +1,208 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Home</title>
-		<meta charset="utf-8">
-		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="HandheldFriendly" content="true"/>
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="		sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-		<!-- Дополнительные стили (не обязательно) -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity	="	sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-		
-		<!-- Подключаем jQuery (необходим для Bootstrap JS) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<!-- Bootstrap JS -->
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="	sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-		<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="styles/app.css">
-	</head>
-	<body style="background: #ECF6FF;">
-		<div class="container">
-			<header class="mainHeader">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-md-2">
-							<p class="progress-title2"><i class="fa fa-code" aria-hidden="true"></i>Aвторский цифровой ресурс.</p>
-						</div>
-						<div class="col-md-10 namesWrap"><p class="progress-title3">Любягина Ольга Анатольевна - ФГБОУ "ИППСП"</p>
-							<p class="progress-title3">Глущенко Даниил Максимович - КТК ФГБОУ ВО "КНИТУ"</p></div>
-					</div>
-				</div>
-			</header>
 
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="true" />
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="		sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+	<!-- Дополнительные стили (не обязательно) -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="	sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+	<!-- Подключаем jQuery (необходим для Bootstrap JS) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="	sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+	<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles/app.css"> </head>
+
+<body style="background: #ECF6FF;">
+
+	<div id="info">
+		<div class="infoInner">
+			<button class="infoButton"><i class="fa fa-info infoIcon" aria-hidden="true"></i></button>
+			<p class="progress-title2" id="desc_title1"></p>
+			<p class="progress-title3" id="desc_title2"></p>
+		</div>
+		<button id="infoClose"><i class="fa fa-window-close" aria-hidden="true"></i></button>
+	</div>
+
+	<div class="container">
+		<header class="mainHeader">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-1"></div>
-					<div class="col-md-5 mainId">
-						<p class="progress-title2">1.Блок "Мотивационный компонент"</p>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 1</p>
-								<p>Диагностика учебной мотивации (авторы А.А. Реана, В.А. Якунина в модификации Н.Ц. Бадмаевой)</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
-						</div>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 2</p>
-								<p>Методика измерения потребности в достижениях (автор Ю.М. Орлов)</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
-						</div>
+					<div class="col-md-2">
+						<p class="progress-title2"><i class="fa fa-code" aria-hidden="true"></i>Aвторский цифровой ресурс.</p>
 					</div>
-					<div class="col-md-5 mainId">
-						<p class="progress-title2">2.Блок "Эмоционально-ценностный компонент"</p>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 3</p>
-								<p>Диагностика «эмоционального интеллекта» (автор Н.Холл)</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
-						</div>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 4</p>
-								<p>Диагностика ценностных ориентаций (авторы В.Ф. Сопов, Л.В. Карпушина)</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
-						</div>
+					<div class="col-md-10 namesWrap">
+						<p class="progress-title3">Любягина Ольга Анатольевна - ФГБОУ "ИППСП"</p>
+						<p class="progress-title3">Глущенко Даниил Максимович - КТК ФГБОУ ВО "КНИТУ"</p>
 					</div>
-					<div class="col-md-1"></div>
 				</div>
-
-
-				<div class="row" style="margin-top: 20px;">
-					<div class="col-md-1"></div>
-					<div class="col-md-5 mainId">
-						<p class="progress-title2">3.Блок "Деятельно-смысловой компонент"</p>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 5</p>
-								<p>SRT — тест системного мышления</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
+			</div>
+		</header>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-5 mainId">
+					<p class="progress-title2">1.Блок "Мотивационный компонент"</p>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 1</p>
+							<p>Диагностика учебной мотивации (авторы А.А. Реана, В.А. Якунина в модификации Н.Ц. Бадмаевой)</p>
 						</div>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 6</p>
-								<p>Диагностика креативности(автор Е. Торренс)</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
-						</div>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 7</p>
-								<p>Тест «Оценка уровня интеллекта»</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
-						</div>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 8</p>
-								<p>Тест-опросник самоорганизации деятельности (ОСД). </p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
-						</div>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 9</p>
-								<p>Методика оценки способностей к проектированию</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
+						<div class="col-md-4">
+							<button class="buttonR" style="margin-top: 40%;"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="1"><i class="fa fa-info" aria-hidden="true"></i></button>
 						</div>
 					</div>
-					<div class="col-md-5 mainId">
-						<p class="progress-title2">4.Блок "Коммуникативный компонент"</p>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 10</p>
-								<p>Диагностика коммуникативных и организаторских способностей <br>(КОС-2)</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 2</p>
+							<p>Методика измерения потребности в достижениях (автор Ю.М. Орлов)</p>
 						</div>
-
-						<p class="progress-title2">5.Блок "Рефлексивно-оценочный компонент"</p>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 11</p>
-								<p>Диагностика уровня развития рефлексивности (автор Н.Холл)</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
-						</div>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2" style="margin-top: 20%;">Тест 12</p>
-								<p>Тест-Ориентир</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
-						</div>
-						<div class="row mainShadow">
-							<div class="col-md-8">
-								<p class="progress-title2">Тест 13</p>
-								<p>Методика изучения статусов профессиональной идентичности</p>
-							</div>
-							<div class="col-md-4">
-								<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
-							</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="2"><i class="fa fa-info" aria-hidden="true"></i></button>
 						</div>
 					</div>
-					<div class="col-md-1"></div>
-
-
 				</div>
-
-
+				<div class="col-md-5 mainId">
+					<p class="progress-title2">2.Блок "Эмоционально-ценностный компонент"</p>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 3</p>
+							<p>Диагностика «эмоционального интеллекта» (автор Н.Холл)</p>
+						</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="3"><i class="fa fa-info" aria-hidden="true"></i></button>
+						</div>
+					</div>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 4</p>
+							<p>Диагностика ценностных ориентаций (авторы В.Ф. Сопов, Л.В. Карпушина)</p>
+						</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="4"><i class="fa fa-info" aria-hidden="true"></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+			<div class="row" style="margin-top: 20px;">
+				<div class="col-md-1"></div>
+				<div class="col-md-5 mainId">
+					<p class="progress-title2">3.Блок "Деятельно-смысловой компонент"</p>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 5</p>
+							<p>SRT — тест системного мышления</p>
+						</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="5"><i class="fa fa-info" aria-hidden="true"></i></button>
+						</div>
+					</div>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 6</p>
+							<p>Диагностика креативности(автор Е. Торренс)</p>
+						</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="6"><i class="fa fa-info" aria-hidden="true"></i></button>
+						</div>
+					</div>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 7</p>
+							<p>Тест «Оценка уровня интеллекта»</p>
+						</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="7"><i class="fa fa-info" aria-hidden="true"></i></button>
+						</div>
+					</div>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 8</p>
+							<p>Тест-опросник самоорганизации деятельности (ОСД). </p>
+						</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="8"><i class="fa fa-info" aria-hidden="true"></i></button>
+						</div>
+					</div>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 9</p>
+							<p>Методика оценки способностей к проектированию</p>
+						</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="9"><i class="fa fa-info" aria-hidden="true"></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 mainId">
+					<p class="progress-title2">4.Блок "Коммуникативный компонент"</p>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 10</p>
+							<p>Диагностика коммуникативных и организаторских способностей
+								<br>(КОС-2)</p>
+						</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="10"><i class="fa fa-info" aria-hidden="true"></i></button>
+						</div>
+					</div>
+					<p class="progress-title2">5.Блок "Рефлексивно-оценочный компонент"</p>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 11</p>
+							<p>Диагностика уровня развития рефлексивности (автор Н.Холл)</p>
+						</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="11"><i class="fa fa-info" aria-hidden="true"></i></button>
+						</div>
+					</div>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2" style="margin-top: 20%;">Тест 12</p>
+							<p>Тест-Ориентир</p>
+						</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="12"><i class="fa fa-info" aria-hidden="true"></i></button>
+						</div>
+					</div>
+					<div class="row mainShadow">
+						<div class="col-md-8">
+							<p class="progress-title2">Тест 13</p>
+							<p>Методика изучения статусов профессиональной идентичности</p>
+						</div>
+						<div class="col-md-4">
+							<button class="buttonR"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR infoButton" value="13"><i class="fa fa-info" aria-hidden="true"></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
 			</div>
 		</div>
-		<footer>
-			<script type="text/javascript" src="scripts/cookie.js"></script>
-			<script type="text/javascript" src="scripts/counter.js"></script>
-		</footer>
-	</body>
+	</div>
+	<footer>
+		<script type="text/javascript" src="scripts/cookie.js"></script>
+		<script src="scripts/animate.js"></script>
+	</footer>
+</body>
+
 </html>

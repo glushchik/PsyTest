@@ -138,34 +138,6 @@ class Answer
 	}
 }
 
-//Класс, представляющий результат
-class Result 
-{
-	constructor(text, value)
-	{
-		this.text = text;
-		this.value = value;
-	}
-
-	//Этот метод проверяет, достаточно ли очков набрал пользователь
-	Check(value)
-	{
-		if(this.value <= value)
-		{
-			return true;
-		}
-		else 
-		{
-			return false;
-		}
-	}
-}
-
-
-const results = 
-[
-	new Result("Коммуникативные мотивы.", 7),
-];
 
 //Массив с вопросами
 const questions = 
@@ -573,7 +545,7 @@ const questions =
 ];
 
 //Сам тест
-const quiz = new Quiz(2, questions, results);
+const quiz = new Quiz(2, questions);
 
 Update();
 
