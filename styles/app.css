@@ -202,13 +202,11 @@ button::-moz-focus-inner {
 }
 
 .progress-title3 {
-	font-size: 14px;
+	font-size: 17px;
 	font-weight: 400;
 	color: #333;
-	text-transform: uppercase;
 	margin: 0;
 	height: 100%;
-	overflow-y: scroll;
 }
 
 .namesWrap {
@@ -227,7 +225,7 @@ button::-moz-focus-inner {
 }
 
 #info {
-	transform: translateX(1000%);
+	transform: translateX(300%);
 	transition: transform .5s;
 }
 
@@ -258,4 +256,15 @@ button::-moz-focus-inner {
 }
 .infoIcon{
 	margin-right: 75%;
+}
+.inTestImg{
+	width: 70%;
+}
+.quiz__body{
+	margin: auto;
+	width: 60%;
+}
+
+#desc_title2{
+	text-align: justify;
 }

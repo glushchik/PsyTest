@@ -24,7 +24,7 @@ function cook(q, v) {
     sNum = "scale_" + mas2[buc]; //Устанавливаем имя шкалы
 
     let cValue = Number.parseInt(getCookie(sNum)); //Получаем её по куки
-    cValue += value;
+    cValue += v;
     setCookie(sNum, cValue);
 };
 //Класс, который представляет сам тест

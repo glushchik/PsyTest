@@ -1,7 +1,4 @@
 //Установим cookie для просмотра количесва проходов.
-const title = document.getElementById("Title");
-const desc = document.getElementById("Desc");
-
 function include(url) {
         var script = document.createElement('script');
         script.src = url;
@@ -29,46 +26,40 @@ if((TestCookie == "") || (TestCookie == null)){
 		setCookie("count",4);
 	}
 	if(smth == 4 ){
-		title.innerHTML = "";
-		desc.description.innerHTML = "";
 		include("scripts/tests/test_5.js");
 		setCookie("count",5)
 	}
 	if(smth == 5 ){
-		title.innerHTML = "";
-		desc.description.innerHTML = "";
-		include("");
+		include("scripts/tests/test_6.js");
 		setCookie("count",6);
 	}
 	if(smth == 6 ){
-		include("");
+		include("scripts/tests/test_7.js");
 		setCookie("count",7);
 	}
 	if(smth == 7 ){
-		include("");
+		include("scripts/tests/test_8.js");
 		setCookie("count",8);
 	}
 	if(smth == 8 ){
-		include("");
+		include("scripts/tests/test_9.js");
 		setCookie("count",9);
 	}
 	if(smth == 9 ){
-		include("");
+		include("scripts/tests/test_10.js");
 		setCookie("count",10);
 	}
 	if(smth == 10 ){
-		include("");
+		include("scripts/tests/test_11.js");
 		setCookie("count",11);
 	}
 	if(smth == 11 ){
-		include("");
+		include("scripts/tests/test_12.js");
 		setCookie("count",12);
 	}
 	if(smth == 12 ){
-		include("");
+		include("scripts/tests/test_13.js");
 		setCookie("count",13);
 	}
-	if(smth == 13 ){
-		console.log("THATS ALL");
-	}
+
 }
