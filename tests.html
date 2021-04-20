@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Home</title>
+<html> 
+	<head> 
+		<title>Тест №</title>
 		<meta charset="utf-8">
 		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,21 +21,26 @@
 		<link rel="stylesheet" href="styles/progress.css">
 	</head>
 	<body style="background: #ECF6FF;">
-		<div class="container">
-			<!--
-			<header class="mainHeader">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-2">
-						<p class="progress-title2"><i class="fa fa-code" aria-hidden="true"></i>Aвторский цифровой ресурс.</p>
-					</div>
-					<div class="col-md-10 namesWrap">
-						<p class="progress-title3">Любягина Ольга Анатольевна - ФГБОУ "ИППСП"</p>
-						<p class="progress-title3">Глущенко Даниил Максимович - КТК ФГБОУ ВО "КНИТУ"</p>
-					</div>
-				</div>
+
+		<div id="instruction">
+			<div class="instructionInner">
+				<button class="infoButton"><i class="fa fa-info infoIcon" aria-hidden="true"></i></button>
+				<p class="progress-title2" id="desc_title1">Инструкция к тесту</p>
+				<p class="progress-title3" id="desc_instruction"></p>
 			</div>
-		</header>-->
+			<button id="infoClose"><i class="fa fa-window-close" aria-hidden="true"></i></button>
+		</div>
+
+		<div id="processing">
+			<div class="instructionInner">
+				<button class="infoButton"><i class="fa fa-info infoIcon" aria-hidden="true"></i></button>
+				<p class="progress-title2" id="desc_title1">Обработка результатов<br>Листайте вниз</p>
+				<p class="progress-title3" id="desc_process"></p>
+			</div>
+			<button id="processClose"><i class="fa fa-window-close" aria-hidden="true"></i></button>
+		</div>
+
+		<div class="container">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-2"></div>
@@ -65,11 +70,32 @@
 					</div>
 					<div class="col-md-2"></div>
 				</div>
+				<div class="row">
+					<div class="col-md-2"></div>
+
+					<div class="col-md-4">
+						<div class="assist">
+							<button id="instructionButton" class="buttonRB">
+								Инструкция к тесту
+							</button>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="assist">
+							<button id="processingButton" class="buttonRB">
+								Обработка результатов
+							</button>
+						</div>
+					</div>
+
+					<div class="col-md-2"></div>
+				</div>
 			</div>
 		</div>
 		<footer>
 			<script type="text/javascript" src="scripts/cookie.js"></script>
 			<script type="text/javascript" src="scripts/counter.js"></script>
+			<script type="text/javascript" src="scripts/instruction.js"></script>
 		</footer>
 	</body>
 </html>

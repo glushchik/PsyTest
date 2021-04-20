@@ -1425,128 +1425,128 @@ function Update()
 		headElem.innerHTML = "";
 		buttonsElem.innerHTML = "";
 		for(let i = 1; i < 6; i++){
-			var wrap =  document.createElement("div");
-			wrap.setAttribute('class','progressWrap');progressBar.setAttribute('style','width:'+progressInfill+'%');
-			progressValue.innerHTML = progressInfill;e =  document.createElement("h3");
-			progressTitle.setAttribute('class','progress-title')
-			var mainDiv = document.createElement("div");
-			mainDiv.setAttribute('class','progress blue');
-			var progressBar = document.createElement("div");
-			progressBar.setAttribute('class','progress-bar');
-			var	progressValue =  document.createElement("div");
-			progressValue.setAttribute('class','progress-value');
+			var wrap = document.createElement("div");
+            wrap.setAttribute('class', 'progressWrap');
+            var progressTitle = document.createElement("h3");
+            progressTitle.setAttribute('class', 'progress-title')
+            var mainDiv = document.createElement("div");
+            mainDiv.setAttribute('class', 'progress blue');
+            var progressBar = document.createElement("div");
+            progressBar.setAttribute('class', 'progress-bar');
+            var progressValue = document.createElement("div");
+            progressValue.setAttribute('class', 'progress-value');
 
 			if(i == 1){
 				var progressInfill = getCookie("scale_1");
-				progressValue.innerHTML = "Развитие себя: "+progressInfill + " из 30";
+				progressTitle.innerHTML = "Развитие себя: "+progressInfill + " из 30";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/30)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i == 2){
-				ar progressInfill = getCookie("scale_2");
-				progressValue.innerHTML = "Духовное удовлетворение: "+progressInfill + " из 30";
+				var progressInfill = getCookie("scale_2");
+				progressTitle.innerHTML = "Духовное удовлетворение: "+progressInfill + " из 30";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/30)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i == 3){
-				ar progressInfill = getCookie("scale_3");
-				progressValue.innerHTML = "Креативность": "+progressInfill + " из 30";
+				var progressInfill = getCookie("scale_3");
+				progressTitle.innerHTML = "Креативность: " +progressInfill + " из 30";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/30)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i == 4){
-				ar progressInfill = getCookie("scale_4");
-				progressValue.innerHTML = "Социальные контакты: "+progressInfill + " из 30";
+				var progressInfill = getCookie("scale_4");
+				progressTitle.innerHTML = "Социальные контакты: "+progressInfill + " из 30";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/30)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i == 5){
-				ar progressInfill = getCookie("scale_5");
-				progressValue.innerHTML = "Собственный престиж: "+progressInfill + " из 30";
+				var progressInfill = getCookie("scale_5");
+				progressTitle.innerHTML = "Собственный престиж: "+progressInfill + " из 30";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/30)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i == 6){
-				ar progressInfill = getCookie("scale_6");
-				progressValue.innerHTML = "Достижения: "+progressInfill + " из 30";
+				var progressInfill = getCookie("scale_6");
+				progressTitle.innerHTML = "Достижения: "+progressInfill + " из 30";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/30)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i == 7){
-				ar progressInfill = getCookie("scale_7");
-				progressValue.innerHTML = "Материальное положение: "+progressInfill + " из 30";
+				var progressInfill = getCookie("scale_7");
+				progressTitle.innerHTML = "Материальное положение: "+progressInfill + " из 30";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/30)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i == 8){
-				ar progressInfill = getCookie("scale_8");
-				progressValue.innerHTML = "Сохранение индивидуальности: "+progressInfill + " из 30";
+				var progressInfill = getCookie("scale_8");
+				progressTitle.innerHTML = "Сохранение индивидуальности: "+progressInfill + " из 30";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/30)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 
 
 			if(i == 9){
-				ar progressInfill = getCookie("scale_9");
-				progressValue.innerHTML = "Профессиональная жизнь: "+progressInfill + " из 35";
+				var progressInfill = getCookie("scale_9");
+				progressTitle.innerHTML = "Профессиональная жизнь: "+progressInfill + " из 35";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/35)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i == 10){
-				ar progressInfill = getCookie("scale_10");
-				progressValue.innerHTML = "Обучение и образование: "+progressInfill + " из 35";
+				var progressInfill = getCookie("scale_10");
+				progressTitle.innerHTML = "Обучение и образование: "+progressInfill + " из 35";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/35)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i == 11){
-				ar progressInfill = getCookie("scale_11");
-				progressValue.innerHTML = "Семейная жизнь: "+progressInfill + " из 35";
+				var progressInfill = getCookie("scale_11");
+				progressTitle.innerHTML = "Семейная жизнь: "+progressInfill + " из 35";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/35)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i == 12){
-				ar progressInfill = getCookie("scale_12");
-				progressValue.innerHTML = "Общественная жизнь: "+progressInfill + " из 35";
+				var progressInfill = getCookie("scale_12");
+				progressTitle.innerHTML = "Общественная жизнь: "+progressInfill + " из 35";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/35)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i == 13){
-				ar progressInfill = getCookie("scale_13");
-				progressValue.innerHTML = "Увлечения: "+progressInfill + " из 35";
+				var progressInfill = getCookie("scale_13");
+				progressTitle.innerHTML = "Увлечения: "+progressInfill + " из 35";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/35)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
 			if(i ==14){
-				ar progressInfill = getCookie("scale_14");
-				progressValue.innerHTML = "Физическая активность: "+progressInfill + " из 35";
+				var progressInfill = getCookie("scale_14");
+				progressTitle.innerHTML = "Физическая активность: "+progressInfill + " из 35";
 				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/18)*100);
+				progressInfill = Number.parseInt((progressInfill/35)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
 				progressValue.innerHTML = progressInfill;
 			}
@@ -1557,9 +1557,10 @@ function Update()
 			headElem.appendChild(wrap);
 		}
 
-		let percentOf = Number.parseInt((coockieScore/160)*100);
+		let percentOf = Number.parseInt((coockieScore/450)*100);
 		console.log("TEST4: " + percentOf);
 		setCookie("TEST4", percentOf);
+		setCookie("TEST4_PER", 450)
 		pagesElem.innerHTML = "Конец теста.";
 	}
 }

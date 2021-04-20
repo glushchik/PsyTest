@@ -376,11 +376,14 @@ function Update()
 	}
 	else
 	{
+		headElem.innerHTML = "";
+		headElem.innerHTML = "Результаты теста";
 		//Если это конец, то выводим результат
 		buttonsElem.innerHTML = "";
 		console.log("test 2 score:" + quiz.score);
 		var TEST2 = Number.parseInt(quiz.score);
 		setCookie("TEST2",TEST2);
+		setCookie("TEST3_PER",23);
 		pagesElem.innerHTML = "Очки: " + quiz.score;
 	}
 }

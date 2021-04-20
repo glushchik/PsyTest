@@ -41,6 +41,13 @@ button::-moz-focus-inner {
 	margin-right: 10px;
 	min-height: 450px;
 }
+.mainId2 {
+	background-color: white;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 50px;
+	min-height: 100px;
+}
 
 .mainShadow {
 	margin: 10px 40px;
@@ -52,6 +59,14 @@ button::-moz-focus-inner {
 	min-height: 150px;
 }
 
+.mainShadow2 {
+	background-color: white;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 50px;
+	box-shadow: 0 0 10px 5px rgba(221, 221, 221, 0.2);
+	min-height: 100px;
+}
 #main3 {
 	background-color: white;
 	vertical-align: middle;
@@ -135,6 +150,7 @@ button::-moz-focus-inner {
 }
 
 .container {
+	min-width: 320px;
 	max-width: 1140px;
 }
 
@@ -214,23 +230,28 @@ button::-moz-focus-inner {
 }
 
 #info {
-	width: 600px;
-	height: 600px;
+	width: 65%;
+	height: 70%;
 	position: absolute;
 	background-color: #fff;
 	z-index: 9999;
 	border-radius: 50px;
 	top: 15%;
 	box-shadow: 0 0 10px 5px rgba(221, 221, 221, 0.6);
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
 }
 
 #info {
-	transform: translateX(300%);
+	transform: translateX(180%);
 	transition: transform .5s;
 }
 
 #info.active {
-	transform: translateX(10%);
+	transform: translateX(29%);
 	transition: transform .5s;
 }
 
@@ -267,4 +288,219 @@ button::-moz-focus-inner {
 
 #desc_title2{
 	text-align: justify;
+}
+.assist{
+	
+	background-color: white;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.buttonRB{
+	border: 0;
+	border-radius: 10px;
+	background: #6477EB;
+	color: #fff;
+	font-size: 13pt;
+	cursor: pointer;
+	padding: 10px 30px;
+}
+#instruction{
+	width: 40%;
+	height: 80%;
+	position: absolute;
+	background-color: #fff;
+	z-index: 9999;
+	border-radius: 50px;
+	box-shadow: 0 0 10px 5px rgba(221, 221, 221, 0.6);
+	transform: translateY(130%);
+	transition: transform .5s;
+	top: 12%;
+}
+#instruction.active{
+	transform: translateY(10%);
+	transition: transform .5s;
+}
+.instructionInner{
+	padding: 30px;
+}
+#processing{
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	background-color: #fff;
+	z-index: 9999;
+	border-radius: 50px;
+	box-shadow: 0 0 10px 5px rgba(221, 221, 221, 0.6);
+	transform: translateY(130%);
+	transition: transform .5s;
+	right: 0;
+	top: 12%;
+	overflow-y: scroll;
+	padding-bottom: 20px;
+}
+#processing.active{
+	transform: translateY(10%);
+	transition: transform .5s;
+}
+#processClose{
+	border: none;
+	background: red;
+	color: #fff;
+	border-radius: 30px;
+	position: absolute;
+	bottom: 91%;
+	left: 90%;
+}
+::-webkit-scrollbar { /* chrome based */
+    width: 0px;  /* ширина scrollbar'a */
+    background: transparent;  /* опционально */
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+	.nameBlock{
+		padding-top: 30px;
+	}
+	.headerIconText{
+		margin: 0;
+	}
+	.mainShadow{
+		margin: 5% 15%;
+		padding-top:2%;
+		padding-bottom: 5%;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.col-md-4{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.buttonR.launchTest{
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 3%;
+		width: 70%;
+	}
+	.buttonR.infoButton{
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 3%;
+		width: 70%;
+	}
+	.mainId{
+		min-height: 500px;
+		width: 95%;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+	#info{
+		width: 95%;
+		height: 90%;
+	}
+	#info.active {
+		transform: translateX(2%);
+		transition: transform .5s;
+	}
+	.hideIn320{
+		display: none;
+	}
+	.assist{
+		margin-top: 10px;
+	}
+	#infoClose{
+		left: 85%;
+	}
+	#instruction{
+		width: 95%;
+		height: 90%;
+	}
+}
+/* Portrait phones and smaller */
+@media (min-width: 320px) and (max-width: 767px){
+	.nameBlock{
+		padding-top: 30px;
+	}
+	.headerIconText{
+		margin: 0;
+	}
+	.mainShadow{
+		margin: 5% 15%;
+		padding-top:2%;
+		padding-bottom: 5%;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.col-md-4{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.buttonR.launchTest{
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 3%;
+		width: 70%;
+	}
+	.buttonR.infoButton{
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 3%;
+		width: 70%;
+	}
+	.mainId{
+		min-height: 500px;
+		width: 95%;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+	#info{
+		width: 95%;
+		height: 90%;
+	}
+	#info.active {
+		transform: translateX(2%);
+		transition: transform .5s;
+	}
+	.hideIn320{
+		display: none;
+	}
+	.assist{
+		margin-top: 10px;
+	}
+	#infoClose{
+		left: 85%;
+	}
+	#instruction,#processing{
+		width: 98%;
+		height: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#processClose{
+		left: 85%;
+	}
+	#processing.active, #instruction.active{
+		transform: translateX(1%);
+		transition: transform .5s;
+	}
 }

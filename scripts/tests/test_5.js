@@ -112,6 +112,28 @@ class Answer
         this.value = value; 
     }
 }
+//Класс, представляющий результат
+class Result 
+{
+    constructor(text, value)
+    {
+        this.text = text;
+        this.value = value;
+    }
+
+    //Этот метод проверяет, достаточно ли очков набрал пользователь
+    Check(value)
+    {
+        if(this.value <= value)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+}
 //Массив с вопросами
 const questions = 
 [
@@ -300,14 +322,18 @@ function Update()
     else
     {
         //Если это конец, то выводим результат
+        headElem.innerHTML = "";
         buttonsElem.innerHTML = "";
-        if(quiz.score < 17){
+        if(quiz.score < 9){
             headElem.innerHTML = "Низкий уровень интеллектуальных способностей»";
-        }else if(quiz.score > 16 &&  quiz.score < 25){
+        }else if(quiz.score > 9 &&  quiz.score < 16){
             headElem.innerHTML = "Средний уровень интеллектуальных способностей!<br>Вы можете гордится собой,уровень ваших интеллектуальных способностей позволяет вам хоть сейчас приступить к освоению широкого круга профессий. Кроме того, уровень вашего интеллектуального развития достаточен для того, чтобы вы могли рассчитывать на довольно высокую успешность выполнения деятельности в любой профессии творческого класса.";
-        }else if(quiz.score > 29){
+        }else if(quiz.score > 16){
             headElem.innerHTML = "А если ваша оценка превосходит 30 баллов, то вы можете гордиться своими результатами. Мало кто из людей достигает такого высокого уровня развития интеллектуальных способностей.";
         }
+        setCookie("TEST5", quiz.score);
+        setCookie("TEST5_PER", 18)
+        pagesElem.innerHTML = "Конец теста.";
     }
 }
 

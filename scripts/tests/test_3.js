@@ -206,16 +206,6 @@ const questions =
 		new Answer("Полностью не согласен", -3),
 	]),
 
-	new Question("",     
-	[
-		new Answer("Полностью согласен", 3),
-		new Answer("В основном согласен", 2),
-		new Answer("Отчасти согласен", 1),
-		new Answer("Отчасти не согласен", -1),
-		new Answer("В основном не согласен", -2),
-		new Answer("Полностью не согласен", -3),
-	]),
-
 	new Question("Я способен наблюдать изменение своих чувств.",     
 	[
 		new Answer("Полностью согласен", 3),
@@ -245,27 +235,6 @@ const questions =
 		new Answer("В основном не согласен", -2),
 		new Answer("Полностью не согласен", -3),
 	]),
-
-	new Question("",     
-	[
-		new Answer("Полностью согласен", 3),
-		new Answer("В основном согласен", 2),
-		new Answer("Отчасти согласен", 1),
-		new Answer("Отчасти не согласен", -1),
-		new Answer("В основном не согласен", -2),
-		new Answer("Полностью не согласен", -3),
-	]),
-
-	new Question("",     
-	[
-		new Answer("Полностью согласен", 3),
-		new Answer("В основном согласен", 2),
-		new Answer("Отчасти согласен", 1),
-		new Answer("Отчасти не согласен", -1),
-		new Answer("В основном не согласен", -2),
-		new Answer("Полностью не согласен", -3),
-	]),
-
 	new Question("Я слежу за тем, как я себя чувствую.",     
 	[
 		new Answer("Полностью согласен", 3),
@@ -553,20 +522,20 @@ function Update()
 		headElem.innerHTML = "";
 		buttonsElem.innerHTML = "";
 		for(let i = 1; i < 6; i++){
-			var wrap =  document.createElement("div");
-			wrap.setAttribute('class','progressWrap');progressBar.setAttribute('style','width:'+progressInfill+'%');
-			progressValue.innerHTML = progressInfill;e =  document.createElement("h3");
-			progressTitle.setAttribute('class','progress-title')
-			var mainDiv = document.createElement("div");
-			mainDiv.setAttribute('class','progress blue');
-			var progressBar = document.createElement("div");
-			progressBar.setAttribute('class','progress-bar');
-			var	progressValue =  document.createElement("div");
-			progressValue.setAttribute('class','progress-value');
+			var wrap = document.createElement("div");
+            wrap.setAttribute('class', 'progressWrap');
+            var progressTitle = document.createElement("h3");
+            progressTitle.setAttribute('class', 'progress-title')
+            var mainDiv = document.createElement("div");
+            mainDiv.setAttribute('class', 'progress blue');
+            var progressBar = document.createElement("div");
+            progressBar.setAttribute('class', 'progress-bar');
+            var progressValue = document.createElement("div");
+            progressValue.setAttribute('class', 'progress-value');
 
 			if(i == 1){
 				var progressInfill = getCookie("scale_1");
-				progressValue.innerHTML = "Эмоциональная осведомленность: "+progressInfill + " из 18";
+				progressTitle.innerHTML = "Эмоциональная осведомленность: "+progressInfill + " из 18";
 				coockieScore += Number.parseInt(progressInfill);
 				progressInfill = Number.parseInt((progressInfill/18)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
@@ -574,7 +543,7 @@ function Update()
 			}
 			if(i == 2){
 				var progressInfill = getCookie("scale_2");
-				progressValue.innerHTML = "Управление своими эмоциями: "+progressInfill + " из 18";
+				progressTitle.innerHTML = "Управление своими эмоциями: "+progressInfill + " из 18";
 				coockieScore += Number.parseInt(progressInfill);
 				progressInfill = Number.parseInt((progressInfill/18)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
@@ -582,7 +551,7 @@ function Update()
 			}
 			if(i == 3){
 				var progressInfill = getCookie("scale_3");
-				progressValue.innerHTML = "Самомотивация: "+progressInfill + " из 18";
+				progressTitle.innerHTML = "Самомотивация: "+progressInfill + " из 18";
 				coockieScore += Number.parseInt(progressInfill);
 				progressInfill = Number.parseInt((progressInfill/18)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
@@ -590,7 +559,7 @@ function Update()
 			}
 			if(i == 4){
 				var progressInfill = getCookie("scale_4");
-				progressValue.innerHTML = "Эмпатия: "+progressInfill + " из 18";
+				progressTitle.innerHTML = "Эмпатия: "+progressInfill + " из 18";
 				coockieScore += Number.parseInt(progressInfill);
 				progressInfill = Number.parseInt((progressInfill/18)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
@@ -598,7 +567,7 @@ function Update()
 			}
 			if(i == 5){
 				var progressInfill = getCookie("scale_5");
-				progressValue.innerHTML = "Распознавание эмоций других людей: "+progressInfill + " из 18";
+				progressTitle.innerHTML = "Распознавание эмоций других людей: "+progressInfill + " из 18";
 				coockieScore += Number.parseInt(progressInfill);
 				progressInfill = Number.parseInt((progressInfill/18)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
@@ -611,10 +580,9 @@ function Update()
 			headElem.appendChild(wrap);
 		}
 
-		let percentOf = Number.parseInt((coockieScore/160)*100);
-		console.log("percentOf2: " + percentOf);
-		setCookie("percentOfCoockieScore2", percentOf);
-		setCookie("end",2);
+		let TEST3 = Number.parseInt((coockieScore/90)*100);
+		setCookie("TEST3",TEST3);
+		setCookie("TEST3_PER", 90)
 		pagesElem.innerHTML = "Конец теста.";
 	}
 }

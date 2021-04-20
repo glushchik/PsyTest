@@ -1,13 +1,7 @@
 /*
-	ТЕСТ НОМЕР 7 
-	ОЦЕНКА УРОВНЯ ИНТЕЛЛЕКТА 
+	ТЕСТ НОМЕР 11 
+	Методика «Рекфлексивности» 
 */
-setCookie("scale_1", 0);
-setCookie("scale_2", 0);
-setCookie("scale_3", 0);
-setCookie("scale_4", 0);
-setCookie("scale_5", 0);
-setCookie("scale_6", 0);
 
 const headElem = document.getElementById("head");
 const buttonsElem = document.getElementById("buttons");
@@ -42,37 +36,7 @@ class Quiz
 	{
 		//Добавляем очки
 		let value = this.questions[this.current].Click(index);
-		let indexQue = this.current;
-		if((indexQue == 2)||(indexQue == 4)||(indexQue == 8)||(indexQue == 11)){
-			let coockieValue = Number.parseInt(getCookie("scale_1"));
-			coockieValue += value;
-			setCookie("scale_1", coockieValue);
-		}
-		if((indexQue == 7)||(indexQue == 14)||(indexQue == 18)||(indexQue == 20)||(indexQue == 23)||(indexQue == 25)){
-			let coockieValue = Number.parseInt(getCookie("scale_2"));
-			coockieValue += value;
-			setCookie("scale_2", coockieValue);
-		}
-		if((indexQue == 1)||(indexQue == 5)||(indexQue == 10)||(indexQue == 15)||(indexQue == 21)){
-			let coockieValue = Number.parseInt(getCookie("scale_3"));
-			coockieValue += value;
-			setCookie("scale_3", coockieValue);
-		}
-		if((indexQue == 3)||(indexQue == 6)||(indexQue == 13)||(indexQue == 17)||(indexQue == 24)){
-			let coockieValue = Number.parseInt(getCookie("scale_4"));
-			coockieValue += value;
-			setCookie("scale_4", coockieValue);
-		}
-		if((indexQue == 16)||(indexQue == 19)||(indexQue == 22)){
-			let coockieValue = Number.parseInt(getCookie("scale_5"));
-			coockieValue += value;
-			setCookie("scale_5", coockieValue);
-		}
-		if((indexQue == 9)||( indexQue == 12)){
-			let coockieValue = Number.parseInt(getCookie("scale_6"));
-			coockieValue += value;
-			setCookie("scale_6", coockieValue);
-		}
+		this.score += value;
 
 		let correct = -1;
 
@@ -113,14 +77,6 @@ class Quiz
 	//Если вопросы кончились, этот метод проверит, какой результат получил пользователь
 	End()
 	{
-		for(let i = 0; i < this.results.length; i++)
-		{
-			if(this.results[i].Check(this.score))
-			{
-				this.result = i;
-
-			}
-		}
 	}
 } 
 
@@ -149,317 +105,377 @@ class Answer
 	}
 }
 
-//Класс, представляющий результат
-class Result 
-{
-	constructor(text, value)
-	{
-		this.text = text;
-		this.value = value;
-	}
-
-	//Этот метод проверяет, достаточно ли очков набрал пользователь
-	Check(value)
-	{
-		if(this.value <= value)
-		{
-			return true;
-		}
-		else 
-		{
-			return false;
-		}
-	}
-}
-
-
-
-const results = 
-[
-	
-];
-
 //Массив с вопросами
 const questions = 
 [
+
 	//1
-	new Question("Мне требуется много времени, чтобы “раскачаться” и начать действовать.",     
+	new Question("Одинадцатый месяц года - это ",     
 	[
-		new Answer("1", 7),
-		new Answer("2", 6),
-		new Answer("3", 5),
-		new Answer("4", 4),
-		new Answer("5", 3),
-		new Answer("6", 2),
-		new Answer("7", 1),
+		new Answer("Октябрь ", 0),
+		new Answer("Май", 0),
+		new Answer("Ноябрь", 1),
+		new Answer("Февраль", 0),
+
+	]),
+	//2
+	new Question("Суровый является противоположным по значению слову:",     
+	[
+		new Answer("Резкий", 0),
+		new Answer("Строгий", 0),
+		new Answer("Мягкий", 1),
+		new Answer("Жесткий", 0),
+		new Answer("Неподатливый", 0),
+	]),
+	//3
+	new Question("Какое из приведенных ниже слов отлично от других?",     
+	[
+		new Answer("Определенный", 0),
+		new Answer("Сомнительный", 1),
+		new Answer("Уверенный", 0),
+		new Answer("Доверие", 0),
+		new Answer("Верный", 0),
+	]),
+	//4
+	new Question("Верно ли что н.э. означает «нашей эры» («новой эры»)?",     
+	[
+		new Answer("Да", 1),
+		new Answer("Нет", 0),
 	]),
 
-	new Question("Я планирую мои дела ежедневно.",     
+	//5
+	new Question("Какое из следующих слов отлично от других?",     
+	[
+		new Answer("Звонить", 0),
+		new Answer("Болтать", 0),
+		new Answer("Слушать", 1),
+		new Answer("Говорить", 0),
+		new Answer("Нет отличающихся слов", 0),
+	]),
+	//6
+	new Question("Слово безукоризненный является противоположным по своему значению слову:",     
+	[
+		new Answer("Незапятнанный", 0),
+		new Answer("Непристойный", 2),
+		new Answer("Неподкупный", 0),
+		new Answer("Невинный", 0),
+		new Answer("Класический", 0),
+	]),
+	//7
+	new Question("Какое из приведенных ниже слов относится к слову жевать как обоняние к нос?",     
+	[
+		new Answer("Сладкий", 0),
+		new Answer("Язык", 0),
+		new Answer("Запах", 0),
+		new Answer("Зубы", 1),
+		new Answer("Чистый", 0),
+	]),
+	//8
+	new Question("Сколько из приведенных ниже пар слов являются полностью идентичными?<br>Sharp, М.С. Sharp, М.С. <br>Fielder, Е.Н. Filder, E.N. <br>Connor, М.С. Conner, M.G. <br>Woesner, O.W. Woerner, O.W. <br>Soderquist, P.E. Soderquist, B.E. <br>",     
 	[
 		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
+		new Answer("2", 0),
+		new Answer("3", 0),
+		new Answer("4", 0),
+		new Answer("5", 0),
 	]),
 
-	new Question("Меня выводят из себя и выбивают из привычного графика непредвиденные дела.",     
+	//9
+	new Question("Ясный является противоположным по смыслу слову:",     
+	[
+		new Answer("Очевидный", 0),
+		new Answer("Явный", 0),
+		new Answer("Недвусмысленный", 0),
+		new Answer("Отчетливый", 0),
+		new Answer("Тусклый", 1),
+	]),
+	//10
+	new Question("Предприниматель купил несколько подержанных автомобилей за 3500 долларов, а продал их за 5500, заработав на этом 50 долларов за автомобиль. Сколько автомобилей он перепродал?",     
+	[
+		new Answer("10", 0),
+		new Answer("50", 0),
+		new Answer("20", 0),
+		new Answer("40", 1),
+		new Answer("70", 0),
+	]),
+	//11
+	new Question("Слова стук и сток имеют:",     
+	[
+		new Answer("Сходное значение", 0),
+		new Answer("Противоположное", 0),
+		new Answer("Ни сходное, ни противоположное", 1),
+	]),
+	//12
+	new Question("Три лимона стоят 45 копеек. Сколько (в копейках) стоят 1,5 дюжины?",     
+	[
+		new Answer("10", 0),
+		new Answer("485", 0),
+		new Answer("270", 1),
+		new Answer("675", 0),
+		new Answer("225", 0),
+	]),
+	//13
+	new Question("Сколько из этих 6 пар чисел являются полностью одинаковыми?<br>5296   5296<br>66986    69686 <br>	834426    834426 <br>7354256    7354256 <br>61197172    61197172 <br>83238324    83238234 <br>",     
+	[
+		new Answer("1", 0),
+		new Answer("2", 0),
+		new Answer("3", 0),
+		new Answer("4", 1),
+		new Answer("5", 0),
+		new Answer("Все", 0),
+	]),
+	//14
+	new Question(".Близкий является противоположным по значению слову:",     
+	[
+		new Answer("Дружеский", 0),
+		new Answer("Приятельский", 0),
+		new Answer("Чужой", 1),
+		new Answer("Родной", 0),
+		new Answer("Иной", 0),
+	]),
+	//15
+	new Question("Какое число является наименьшим?",     
+	[
+		new Answer("0.7", 0),
+		new Answer("9", 0),
+		new Answer("36", 0),
+		new Answer("0.31", 1),
+		new Answer("5", 0),
+	]),
+	//16
+	new Question("Расставьте предлагаемые ниже слова в таком порядке, чтобы получилось правильное предложение. В качестве ответа введите номер последнего слова:<br>есть(1), соль(2), любовь(3), жизни(4)",     
+	[
+		new Answer("1", 0),
+		new Answer("2", 0),
+		new Answer("3", 0),
+		new Answer("4", 1),
+	]),
+	//18
+	new Question("Два рыбака поймали 36 рыб. Первый поймал в 8 раз больше, чем второй. Сколько поймал второй?",     
+	[
+		new Answer("1", 0),
+		new Answer("3", 0),
+		new Answer("4", 1),
+		new Answer("5", 0),
+		new Answer("2", 0),
+	]),
+	//19
+	new Question("Слова восходить и возродить имеют:",     
+	[
+		new Answer("Сходное значение", 0),
+		new Answer("Противоположное", 0),
+		new Answer("Ни сходное, ни противоположное", 1),
+	]),
+	//20
+	new Question(" Расставьте предлагаемые ниже слова в таком порядке, чтобы получилось утверждение. Если оно правильно, то ответом будет 1, если неправильно, — 2:<br>мхом обороты камень набирает заросший.",     
+	[
+		new Answer("1", 0),
+		new Answer("2", 1),
+	]),
+	//21
+	new Question("Какие две из приведенных ниже фраз имеют одинаковый смысл:",     
+	[
+		new Answer("Держать нос по ветру.<br>Не все то золото, что блестит", 0),
+		new Answer("Трое докторов не лучше одного<br>У семи нянек дитя без глаза", 1),
+	]),
+	//22
+	new Question("Какое число должно стоять вместо знака «?»?<br>73  66  59  52  45  38 ?",     
+	[
+		new Answer("21", 0),
+		new Answer("24", 0),
+		new Answer("31", 1),
+		new Answer("45", 0),
+	]),
+	//23
+	new Question("Длительность дня и ночи в сентябре почти такая же, как и в:",     
+	[
+		new Answer("Июне", 0),
+		new Answer("Марте", 1),
+		new Answer("Мае", 0),
+		new Answer("Ноябре", 0),
+	]),
+	//24
+	new Question("Предположим, что первые два утверждения верны. Тогда заключительное будет: 1 — верно; 2 — неверно; 3 — неопределенно.",     
+	[
+		new Answer("Все передовые люди — члены партии.", 1),
+		new Answer("Все передовые люди занимают крупные посты.", 0),
+		new Answer("Некоторые члены партии занимают крупные посты.", 0),
+	]),
+	//25
+	new Question("Поезд проходит 75 см за 1/4 с. Если он будет двигаться с той же скоростью, то какое расстояние (в сантиметрах) он пройдет за 5 с?",     
+	[
+		new Answer("250", 0),
+		new Answer("2700", 0),
+		new Answer("1700", 0),
+		new Answer("1500", 1),
+		new Answer("800", 0),
+	]),
+	//26
+	new Question("Если предположить, что два первых утверждения верны, то последнее: 1 — верно; 2 — неверно; 3 — неопределенно.",     
+	[
+		new Answer("Боре столько же лет, сколько Маше", 1),
+		new Answer("Маша моложе Жени", 0),
+		new Answer("Боря моложе Жени", 0),
+	]),
+	//27
+	new Question("Пять полукилограммовых пачек мясного фарша стоят 2 рубля. Сколько килограммов фарша можно купить за 80 копеек?",     
 	[
 		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
+		new Answer("2", 0),
+		new Answer("3", 0),
+		new Answer("5", 0),
+	]),
+	//28
+	new Question("Слова расстилать и растянуть имеют:",     
+	[
+		new Answer("Сходное значение", 1),
+		new Answer("Противоположное", 0),
+		new Answer("Ни сходное, ни противоположное", 0),
+	]),
+	//30
+	new Question("Предположим, что первые два утверждения верны. Тогда последнее: 1 — верно; 2 — неверно; 3 — неопределенно.",     
+	[
+		new Answer("Саша поздоровался с Машей.", 0),
+		new Answer("Маша поздоровалась с Дашей.", 0),
+		new Answer("Саша не поздоровался с Дашей.", 1),
+	]),
+	//31
+	new Question("Автомобиль «Жигули» стоимостью 2400 рублей был уценен во время сезонной распродажи на З3 1/3% Сколько стоил автомобиль во время распродажи?",     
+	[
+		new Answer("1200", 0),
+		new Answer("1600", 1),
+		new Answer("1800", 0),
+		new Answer("1860", 0),
+		new Answer("1733", 0),
+	]),
+	//33
+	new Question("На платье требуется 2 1/3 м ткани. Сколько платьев можно сшить из 42 м?",     
+	[
+		new Answer("12", 0),
+		new Answer("19", 0),
+		new Answer("22", 0),
+		new Answer("20", 0),
+		new Answer("18", 1),
+	]),
+	//34
+	new Question("Значения следующих двух предложений:<br>1.Трое докторов не лучше одного<br>2.Чем больше докторов, тем больше болезней",     
+	[
+		new Answer("Схож", 0),
+		new	Answer("Противоположен",0),
+		new Answer("Ни схож, ни противоположен", 1),
+	]),
+	//35
+	new Question("Слова увеличивать и расширять имеют:",     
+	[
+		new Answer("Схожее", 1),
+		new Answer("Противоположное;", 0),
+		new Answer("ни сходное, ни противоположное", 0),
+	]),
+	//36
+	new Question("Смысл двух английских пословиц:<br>1.Швартоваться лучше двумя якорями.<br>2.Не клади все яйца в одну корзину.",     
+	[
+		new Answer("Схож", 1),
+		new	Answer("Противоположен",0),
+		new Answer("Ни схож, ни противоположен", 0),
+	]),
+	//37
+	new Question("Бакалейщик купил ящик с апельсинами за 36 рублей. В ящике их было 12 дюжин. Он знает, что 2 дюжины испортятся еще до того, как он продаст все апельсины. По какой цене за дюжину (в копейках) ему нужно продавать апельсины, чтобы получить прибыль в 1/3 закупочной цены?",     
+	[
+		new Answer("580", 0),
+		new Answer("250", 0),
+		new Answer("480", 1),
+		new Answer("350", 0),
+		new Answer("120", 0),
+	]),
+	//38
+	new Question("Слова претензия и претенциозный имеют:",     
+	[
+		new Answer("Сходное значение", 1),
+		new Answer("Противоположное", 0),
+		new Answer("Ни сходное, ни противоположное", 0),
+	]),
+	//39
+	new Question("Если бы полкило картошки стоило 0,0125 руб., то сколько килограммов можно было бы купить за 50 копеек?",     
+	[
+		new Answer("20", 1),
+		new Answer("30", 0),
+		new Answer("40", 0),
+		new Answer("50", 0),
+		new Answer("60", 0),
+	]),
+	//40
+	new Question("Один из членов ряда не подходит к другим. Каким числом вы бы его заменили?<br>¼, 1/3, 1/8, ¼, 1/8, 1/8, ¼, 1/8, 1/6.",     
+	[
+		new Answer("1/8", 1),
+		new Answer("¼", 0),
+		new Answer("1/3", 0),
+		new Answer("1/6", 0),
+	]),
+	//41
+	new Question("Слова отражаемый и воображаемый имеют:",     
+	[
+		new Answer("Cходное значение", 0),
+		new Answer("Противоположное", 0),
+		new Answer("Ни сходное, ни противоположное", 1),
+	]),
+	//42
+	new Question("Сколько соток составляет участок 70 х 20 м?",     
+	[
+		new Answer("12", 0),
+		new Answer("25", 0),
+		new Answer("37", 0),
+		new Answer("18", 0),
+		new Answer("14", 1),
+	]),
+	//43
+	new Question("Следующие две фразы по значению:<br>Хорошие вещи дешевы, плохие дороги.<br>Хорошее качество обеспечивается простотой, плохое — сложностью.",     
+	[
+		new Answer("Сходны", 1),
+		new Answer("Противоположны", 0),
+		new Answer("Ни сходны, ни проитивоположны", 0),
+	]),
+	//44
+	new Question("Солдат, стреляя в цель, поразил ее в 12,5% случая. Сколько раз солдат должен выстрелить, чтобы поразить ее сто раз?",     
+	[
+		new Answer("1200", 0),
+		new Answer("800", 1),
+		new Answer("950", 0),
+	]),
+	//46
+	new Question("Три партнера по акционерному обществу «Интенсивник» решили поделить прибыль поровну. Т. вложил в дело 4500 руб., К. — 3500 руб., П. — 2000 руб. Если прибыль составит 2400 руб., то на сколько меньше прибыли получит Т. по сравнению с тем, как если бы прибыль была разделена пропорционально вкладам?",     
+	[
+		new Answer("280", 1),
+		new Answer("370", 0),
+		new Answer("420", 0),
+		new Answer("1200", 0),
+		new Answer("380", 0),
+	]),
+	//47
+	new Question("Какие две из приведенных ниже пословиц имеют сходный смысл?",     
+	[
+		new Answer("Куй железо, пока горячо.<br>Один в поле не воин.", 0),
+		new Answer("Не все то золото, что блестит.<br>Не по виду гляди, а по делам суди.", 0),
+	]),
+	//48
+	new Question("Значения следующих фраз:<br>Лес рубят, щепки летят<br>Большое дело не бывает без потерь.",     
+	[
+		new Answer("Сходны", 1),
+		new Answer("Противоположны", 0),
+		new Answer("Ни сходны, ни противоположны", 0),
+	]),
+	//50
+	new Question("В печатающейся статье 24 000 слов. Редактор решил использовать шрифт двух размеров. При использовании шрифта большего размера на странице умещается 900 слов, меньшего — 1200. Статья должна занять 21 полную страницу в журнале. Сколько страниц должно быть напечатано мелким шрифтом?",     
+	[
+		new Answer("12", 0),
+		new Answer("35", 0),
+		new Answer("17", 1),
+		new Answer("20", 0),
+		new Answer("15", 0),
 	]),
 
-	new Question("Обычно я намечаю программу на день и стараюсь ее выполнить.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Мне бывает трудно завершить начатое.",     
-	[
-		new Answer("1", 7),
-		new Answer("2", 6),
-		new Answer("3", 5),
-		new Answer("4", 4),
-		new Answer("5", 3),
-		new Answer("6", 2),
-		new Answer("7", 1),
-	]),
-
-	new Question("Я не могу отказаться от начатого дела, даже если оно мне “не по зубам”.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Я знаю, чего хочу, и делаю все, чтобы этого добиться.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Я заранее выстраиваю план предстоящего дня.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Мне более важно то, что я делаю и переживаю в данный момент, а не то, что будет или было.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Я могу начать делать несколько дел и ни одно из них не закончить.",     
-	[
-		new Answer("1", 7),
-		new Answer("2", 6),
-		new Answer("3", 5),
-		new Answer("4", 4),
-		new Answer("5", 3),
-		new Answer("6", 2),
-		new Answer("7", 1),
-	]),
-
-	new Question("Я планирую мои повседневные дела согласно определенным принципам.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Я считаю себя человеком, живущим “здесь и сейчас”.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Я не могу перейти к другому делу, если не завершил предыдущего.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Я считаю себя целенаправленным человеком.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Вместо того чтобы заниматься делами, я часто попусту трачу время.",     
-	[
-		new Answer("1", 7),
-		new Answer("2", 6),
-		new Answer("3", 5),
-		new Answer("4", 4),
-		new Answer("5", 3),
-		new Answer("6", 2),
-		new Answer("7", 1),
-	]),
-
-	new Question("Мне нравится вести дневник и фиксировать в нем происходящее со мной.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Иногда я даже не могу заснуть, вспомнив о недоделанных делах.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("У меня есть к чему стремиться.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Мне нравится пользоваться ежедневником и иными средствами планирования времени.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Моя жизнь направлена на достижение определенных результатов.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("У меня бывают трудности с упорядочением моих дел.",     
-	[
-		new Answer("1", 7),
-		new Answer("2", 6),
-		new Answer("3", 5),
-		new Answer("4", 4),
-		new Answer("5", 3),
-		new Answer("6", 2),
-		new Answer("7", 1),
-	]),
-
-	new Question("Мне нравится писать отчеты по итогам работы.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("Я ни к чему не стремлюсь.",     
-	[
-		new Answer("1", 7),
-		new Answer("2", 6),
-		new Answer("3", 5),
-		new Answer("4", 4),
-		new Answer("5", 3),
-		new Answer("6", 2),
-		new Answer("7", 1),
-	]),
-
-	new Question("Если я не закончил какое-то дело, то это не выходит у меня из головы.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
-
-	new Question("У меня есть главная цель в жизни.",     
-	[
-		new Answer("1", 1),
-		new Answer("2", 2),
-		new Answer("3", 3),
-		new Answer("4", 4),
-		new Answer("5", 5),
-		new Answer("6", 6),
-		new Answer("7", 7),
-	]),
 ];
 //Сам тест
-const quiz = new Quiz(2, questions, results);
+const quiz = new Quiz(2, questions);
 
 Update();
 
@@ -498,79 +514,13 @@ function Update()
 	{
 		//Если это конец, то выводим результат
 		buttonsElem.innerHTML = "";
-
-		var coockieScore = 0;
-		headElem.innerHTML = "";
-		buttonsElem.innerHTML = "";
-		for(let i = 1; i < 6; i++){
-			var wrap =  document.createElement("div");
-			wrap.setAttribute('class','progressWrap');progressBar.setAttribute('style','width:'+progressInfill+'%');
-			progressValue.innerHTML = progressInfill;e =  document.createElement("h3");
-			progressTitle.setAttribute('class','progress-title')
-			var mainDiv = document.createElement("div");
-			mainDiv.setAttribute('class','progress blue');
-			var progressBar = document.createElement("div");
-			progressBar.setAttribute('class','progress-bar');
-			var	progressValue =  document.createElement("div");
-			progressValue.setAttribute('class','progress-value');
-			if(i == 1){
-				var progressInfill = getCookie("scale_1");
-				progressValue.innerHTML = "Развитие себя: "+progressInfill + " из 28";
-				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/28)*100);
-				progressBar.setAttribute('style','width:'+progressInfill+'%');
-				progressValue.innerHTML = progressInfill;
-			}
-			if(i == 2){
-				var progressInfill = getCookie("scale_2");
-				progressValue.innerHTML = "Развитие себя: "+progressInfill + " из 42";
-				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/42)*100);
-				progressBar.setAttribute('style','width:'+progressInfill+'%');
-				progressValue.innerHTML = progressInfill;
-			}
-			if(i == 3){
-				var progressInfill = getCookie("scale_3");
-				progressValue.innerHTML = "Развитие себя: "+progressInfill + " из 35";
-				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/35)*100);
-				progressBar.setAttribute('style','width:'+progressInfill+'%');
-				progressValue.innerHTML = progressInfill;
-			}
-			if(i == 4){
-				var progressInfill = getCookie("scale_4");
-				progressValue.innerHTML = "Развитие себя: "+progressInfill + " из 35";
-				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/35)*100);
-				progressBar.setAttribute('style','width:'+progressInfill+'%');
-				progressValue.innerHTML = progressInfill;
-			}
-			if(i == 5){
-				var progressInfill = getCookie("scale_5");
-				progressValue.innerHTML = "Развитие себя: "+progressInfill + " из 21";
-				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/21)*100);
-				progressBar.setAttribute('style','width:'+progressInfill+'%');
-				progressValue.innerHTML = progressInfill;
-			}
-			if(i == 6){
-				var progressInfill = getCookie("scale_1");
-				progressValue.innerHTML = "Развитие себя: "+progressInfill + " из 14";
-				coockieScore += Number.parseInt(progressInfill);
-				progressInfill = Number.parseInt((progressInfill/14)*100);
-				progressBar.setAttribute('style','width:'+progressInfill+'%');
-				progressValue.innerHTML = progressInfill;
-			}
-			progressBar.appendChild(progressValue);
-			mainDiv.appendChild(progressBar);
-			wrap.appendChild(progressTitle);
-			wrap.appendChild(mainDiv);
-			headElem.appendChild(wrap);
+		if(quiz.score < 17){
+			headElem.innerHTML = "Низкий уровень интеллектуальных способностей»";
+		}else if(quiz.score > 16 &&  quiz.score < 25){
+			headElem.innerHTML = "Средний уровень интеллектуальных способностей!<br>Вы можете гордится собой,уровень ваших интеллектуальных способностей позволяет вам хоть сейчас приступить к освоению широкого круга профессий. Кроме того, уровень вашего интеллектуального развития достаточен для того, чтобы вы могли рассчитывать на довольно высокую успешность выполнения деятельности в любой профессии творческого класса.";
+		}else if(quiz.score > 29){
+			headElem.innerHTML = "А если ваша оценка превосходит 30 баллов, то вы можете гордиться своими результатами. Мало кто из людей достигает такого высокого уровня развития интеллектуальных способностей.";
 		}
-		let percentOf = Number.parseInt((coockieScore/160)*100);
-		console.log("TEST8: " + percentOf);
-		setCookie("TEST8", percentOf);
-		pagesElem.innerHTML = "Конец теста.";
 	}
 }
 

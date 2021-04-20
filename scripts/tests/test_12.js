@@ -70,7 +70,7 @@ class Quiz {
         //Добавляем очки
         let value = this.questions[this.current].Click(index);
         let indexQue = this.current;
-        cook(index, value);
+        cook(indexQue, value);
         let correct = -1;
 
         //Если было добавлено хотя одно очко, то считаем, что ответ верный
@@ -102,12 +102,6 @@ class Quiz {
 
     //Если вопросы кончились, этот метод проверит, какой результат получил пользователь
     End() {
-        for (let i = 0; i < this.results.length; i++) {
-            if (this.results[i].Check(this.score)) {
-                this.result = i;
-
-            }
-        }
     }
 }
 
@@ -130,12 +124,6 @@ class Answer {
         this.value = value;
     }
 }
-
-
-
-const results = [
-    new Result("Коммуникативные мотивы.", 7),
-];
 
 //Массив с вопросами
 const questions = [
@@ -436,7 +424,7 @@ const questions = [
         new Answer("Верно", 2),
         new Answer("Совершенно Верно", 3),
     ]),
-    new Question("Разбираться в технических устройствахЛовко обращаться с инструментами",     
+    new Question("Разбираться в технических устройствах",     
     [
         new Answer("Вовсе нет", 0),
         new Answer("Пожалуй так", 1),
@@ -673,41 +661,130 @@ function Update() {
         headElem.innerHTML = "";
         //Разделяем две шкалы на составные
         //Я хочу и я могу
-        let curWnat = [0,0];
-        let curCan = [0,0];
-        let curAbb = [0,0,0,0];
-        let want = [getCookie("scale_1"), getCookie("scale_2"), getCookie("scale_3"), getCookie("scale_4"), getCookie("scale_5")];
-        let can = [getCookie("scale_8"), getCookie("scale_9"), getCookie("scale_10"), getCookie("scale_11"), getCookie("scale_12")];
-        let abbilites = [getCookie("scale_6"),getCookie("scale_13"),getCookie("scale_7"),getCookie("scale_14"),]
+
+        var curWant = [0,0];
+        var curCan = [0,0];
+        var curAbb = [0,0,0,0];
+
+        var m1,m2,m3,m4,m5;
+        m1 = getCookie("scale_1");m2 = getCookie("scale_2");m3 = getCookie("scale_3");m4 = getCookie("scale_4");m5 = getCookie("scale_5");
+        //Кластер профессий 1(8) человек - человек; 2(9) человек - техника; 3(10) человек - знаковая система; 4(11) человек - художественный образ; 5(12) человек - природа.
+        var want = [m1,m2,m3,m4,m5];
+        m1 = getCookie("scale_8");m2 = getCookie("scale_9");m3 = getCookie("scale_10");m4 = getCookie("scale_11");m5 = getCookie("scale_12");
+        var can = [m1,m2,m3,m4,m5];
+        //6,13 - исполнительские; 7,14 - творческие.
+        m1 = getCookie("scale_6");m2 = getCookie("scale_7");m3 = getCookie("scale_13");m4 = getCookie("scale_14");
+        var abbilites = [m1,m2,m3,m4];
         //Перебираем массивы на наибольшее значение
-        for(var i = 0; i < 5 ; i++){
+        for(var i = 0; i <= 4 ; i++){
+            console.log("Прогон алгоритма want + can №"+i);
             if(want[i]>curWant[0]){
+                console.log("want[i] {"+want[i]+"}");
+                console.log("curWant[0] {"+curWant[0]+"}");
                 curWant[0] = want[i];
                 curWant[1] = i;
             }
             if(can[i]>curCan[0]){
+                console.log("can[i] {"+can[i]+"}");
+                console.log("curCan[0] {"+curCan[0]+"}");
                 curCan[0] = can[i];
                 curCan[1] =  i;
             }
         }
-        for(var i = 0; i < 3 ; i++){
-            if(abbilites[0]>abbilites[1]){
-                curAbb[0] = abbilites[0];
-                curAbb[1] = 6;
-            }else{
-                curAbb[0] = abbilites[1];
-                curAbb[1] = 13;
-            }
 
-            if(abbilites[2]>abbilites[3]){
-                curAbb[2] = abbilites[2];
-                curAbb[3] = 7;
-            }else{
-                curAbb[2] = abbilites[3];
-                curAbb[3] = 14;
-            }
+
+        if(abbilites[0] == abbilites[1]){
+            console.log("abbilites[0] == abbilites[1]");
+            console.log("abbilites[0] {"+abbilites[0]+"}");
+            console.log("abbilites[1] {"+abbilites[1]+"}");
+            curAbb[0] = 505;
+            curAbb[1] = 506;
+        }else if(abbilites[0]>abbilites[1]){
+            console.log("abbilites[0] {"+abbilites[0]+"}");
+            console.log("abbilites[1] {"+abbilites[1]+"}");
+            console.log(abbilites[0]+" > "+abbilites[1]);
+            curAbb[0] = abbilites[0];
+            curAbb[1] = 6;
+        }else{
+            console.log("abbilites[0] {"+abbilites[0]+"}");
+            console.log("abbilites[1] {"+abbilites[1]+"}");
+            console.log(abbilites[0]+" < "+abbilites[1]);
+            curAbb[0] = abbilites[1];
+            curAbb[1] = 7;
         }
 
+
+
+        if(abbilites[2] == abbilites[3]){
+            console.log("abbilites[2] == abbilites[3]");
+            console.log("abbilites[2] {"+abbilites[2]+"}");
+            console.log("abbilites[3] {"+abbilites[3]+"}");
+            curAbb[3] = 505;
+            curAbb[4] = 506;
+        }else if(abbilites[2]>abbilites[3]){
+            console.log("abbilites[2] {"+abbilites[2]+"}");
+            console.log("abbilites[3] {"+abbilites[3]+"}");
+            console.log(abbilites[2]+" > "+abbilites[3]);
+            curAbb[2] = abbilites[2];
+            curAbb[3] = 13;
+        }else{
+            console.log("abbilites[2] {"+abbilites[2]+"}");
+            console.log("abbilites[3] {"+abbilites[3]+"}");
+            console.log(abbilites[2]+" < "+abbilites[3]);
+            curAbb[2] = abbilites[3];
+            curAbb[3] = 14;
+        }
+
+        var wantStr;
+        var canStr;
+        var abbWant;
+        var abbCan;
+
+        if(curWant[1] == 1){
+            wantStr = "Человек-человек";
+        }else if(curWant[1] == 2){
+            wantStr = "Человек-техника";
+        }else if(curWant[1] == 3){
+            wantStr = "Человек-знаковая система";
+        }else if(curWant[1] == 4){
+            wantStr = "Человек-художественный образ";
+        }else if(curWant[1] == 5){
+            wantStr = "Человек-природа";
+        }else{
+            wantStr = "Вы желаете быть всеми типами."
+        }
+
+        if(curCan[1] == 1){
+            canStr = "Человек-человек";
+        }else if(curCan[1] == 2){
+            canStr = "Человек-техника";
+        }else if(curCan[1] == 3){
+            canStr = "Человек-знаковая система";
+        }else if(curCan[1] == 4){
+            canStr = "Человек-художественный образ";
+        }else if(curCan[1] == 5){
+            canStr = "Человек-природа";
+        }else{
+            canStr = "У вас есть способности ко всем профессиям"
+        }
+
+        if(curAbb[1] == 6){
+            abbWant = "Исполнительного";
+        }else if(curAbb[1] == 7){
+            abbWant = "Творческого";
+        }else if(curAbb[1] == 506){
+            abbWant = "В равной степени творческого и исполнительного";
+        }else if(curAbb[3] == 13){
+            abbCan = "Исполнительного";
+        }else if(curAbb[3] ==  14){
+            abbCan =  "Творческого";
+        }else if(curAbb[3] == 506){
+            abbCan = "В равной степени творческого и исполнительного";
+        }
+        console.log(curAbb);
+        console.log(curCan);
+        console.log(want,can,abbilites);
+        headElem.innerHTML ="<div class='row'><div class='col-md-6'><div class='mainId2'><div class='mainShadow2'> <b style='font-size: 15pt;'> Желания: </b><p style='font-size: 11pt;'> Вы изъявляете желание к категории:<br> <b><i>"+wantStr+"</i></b><br> Вы желаете обладать способностями<br> <b><i>"+abbWant+"</i></b> характера.</p></div></div></div><div class='col-md-6'><div class='mainId2'><div class='mainShadow2'> <b style='font-size: 15pt;'> Возможности: </b><p style='font-size: 11pt;'> Вы предрасположенны к категории:<br> <b><i>"+canStr+"</i></b><br> Вы желаете обладать способностями<br> <b><i>"+abbCan+"</i></b> характера.</p></div></div></div></div>";
         pagesElem.innerHTML = "Конец теста.";
     }
 }

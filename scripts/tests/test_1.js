@@ -568,6 +568,7 @@ function Update() {
 
         let percentOf = Number.parseInt((coockieScore / 160) * 100);
         setCookie("TEST1", percentOf);
+        setCookie("TEST1_PER", 160);
         pagesElem.innerHTML = "Конец теста.";
         setCookie("end", 1);
     }

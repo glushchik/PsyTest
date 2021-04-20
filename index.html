@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Home</title>
+	<title>Главная страница</title>
 	<meta charset="utf-8">
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,8 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="styles/app.css"> </head>
 
 <body style="background: #ECF6FF;">
-
-	<div id="info">
+	<div class="container">
+		<div id="info">
 		<div class="infoInner">
 			<button class="infoButton"><i class="fa fa-info infoIcon" aria-hidden="true"></i></button>
 			<p class="progress-title2" id="desc_title1"></p>
@@ -29,17 +29,15 @@
 		</div>
 		<button id="infoClose"><i class="fa fa-window-close" aria-hidden="true"></i></button>
 	</div>
-
-	<div class="container">
 		<header class="mainHeader">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-2">
-						<p class="progress-title2"><i class="fa fa-code" aria-hidden="true"></i>Aвторский цифровой ресурс.</p>
+						<p class="progress-title2 headerIconText"><i class="fa fa-code" aria-hidden="true"></i>Aвторский цифровой ресурс.</p>
 					</div>
 					<div class="col-md-10 namesWrap">
-						<p class="progress-title3">Любягина Ольга Анатольевна - ФГБОУ "ИППСП"</p>
-						<p class="progress-title3">Глущенко Даниил Максимович - КТК ФГБОУ ВО "КНИТУ"</p>
+						<p class="progress-title3 hideIn320">Любягина Ольга Анатольевна - ФГБОУ "ИППСП"</p>
+						<p class="progress-title3 hideIn320">Глущенко Даниил Максимович - КТК ФГБОУ ВО "КНИТУ"</p>
 					</div>
 				</div>
 			</div>
@@ -48,14 +46,14 @@
 			<div class="row">
 				<div class="col-md-1"></div>
 				<div class="col-md-5 mainId">
-					<p class="progress-title2">1.Блок "Мотивационный компонент"</p>
+					<p class="progress-title2 nameBlock">1.Блок "Мотивационный компонент"</p>
 					<div class="row mainShadow">
 						<div class="col-md-8">
 							<p class="progress-title2">Тест 1</p>
 							<p>Диагностика учебной мотивации (авторы А.А. Реана, В.А. Якунина в модификации Н.Ц. Бадмаевой)</p>
 						</div>
 						<div class="col-md-4">
-							<button class="buttonR launchTest" style="margin-top: 40%;" value="1"><i class="fa fa-play" aria-hidden="true"></i></button>
+							<button class="buttonR launchTest" value="1"><i class="fa fa-play" aria-hidden="true"></i></button>
 							<button class="buttonR infoButton" value="1"><i class="fa fa-info" aria-hidden="true"></i></button>
 						</div>
 					</div>
@@ -71,7 +69,7 @@
 					</div>
 				</div>
 				<div class="col-md-5 mainId">
-					<p class="progress-title2">2.Блок "Эмоционально-ценностный компонент"</p>
+					<p class="progress-title2 nameBlock">2.Блок "Эмоционально-ценностный компонент"</p>
 					<div class="row mainShadow">
 						<div class="col-md-8">
 							<p class="progress-title2">Тест 3</p>
@@ -98,7 +96,7 @@
 			<div class="row" style="margin-top: 20px;">
 				<div class="col-md-1"></div>
 				<div class="col-md-5 mainId">
-					<p class="progress-title2">3.Блок "Деятельно-смысловой компонент"</p>
+					<p class="progress-title2 nameBlock">3.Блок "Деятельно-смысловой компонент"</p>
 					<div class="row mainShadow">
 						<div class="col-md-8">
 							<p class="progress-title2">Тест 5</p>
@@ -151,7 +149,7 @@
 					</div>
 				</div>
 				<div class="col-md-5 mainId">
-					<p class="progress-title2">4.Блок "Коммуникативный компонент"</p>
+					<p class="progress-title2 nameBlock">4.Блок "Коммуникативный компонент"</p>
 					<div class="row mainShadow">
 						<div class="col-md-8">
 							<p class="progress-title2">Тест 10</p>
@@ -163,7 +161,7 @@
 							<button class="buttonR infoButton" value="10"><i class="fa fa-info" aria-hidden="true"></i></button>
 						</div>
 					</div>
-					<p class="progress-title2">5.Блок "Рефлексивно-оценочный компонент"</p>
+					<p class="progress-title2 nameBlock">5.Блок "Рефлексивно-оценочный компонент"</p>
 					<div class="row mainShadow">
 						<div class="col-md-8">
 							<p class="progress-title2">Тест 11</p>
@@ -206,6 +204,7 @@
 			$('.launchTest').on('click', function(){
 				var count = $(this).attr('value');
 				setCookie("count",count);
+				window.location.href = 'http://f0462076.xsph.ru/tests.html';
 			});
 		</script>
 	</footer>

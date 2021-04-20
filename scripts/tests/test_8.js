@@ -478,7 +478,7 @@ function Update()
 		headElem.innerHTML = "";
 		headElem.innerHTML = "Результаты теста:";
 		buttonsElem.innerHTML = "";
-		for(let i = 1; i < 8; i++){
+		for(let i = 1; i < 7; i++){
 			var wrap =  document.createElement("div");
 			wrap.setAttribute('class','progressWrap');
 			var progressTitle =  document.createElement("h3");
@@ -550,10 +550,10 @@ function Update()
 			headElem.appendChild(wrap);
 		}
 
-		let percentOf = Number.parseInt((coockieScore/165)*100);
-		setCookie("TEST1", percentOf);
+		let percentOf = Number.parseInt((coockieScore/175)*100);
+		setCookie("TEST8", percentOf);
+		setCookie("TEST8_PER", 175)
 		pagesElem.innerHTML = "Конец теста.";
-		setCookie("end",1);
 	}
 }
 

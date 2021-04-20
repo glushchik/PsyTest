@@ -15,7 +15,7 @@ function cook(q, v) {
     	Номер вопроса равен индексу в массиве, ссылаясь на объект массива, мы получаем значение следующего массива
     	в котором идет ссылка на элемент шкалы, то есть на шкалу 1 или 2.
     */
-    let mas1 = [0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1];
+    let mas1 = [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,1,0,1,0];
     let mas2 = [1, 2];
     let buc = mas1[q]; //Получаем ссылку на шкалу
     let sNum; //Переменная шкалы
@@ -54,7 +54,7 @@ class Quiz {
         //Добавляем очки
         let value = this.questions[this.current].Click(index);
         let indexQue = this.current;
-        cook(index, value);
+        cook(indexQue, value);
         let correct = -1;
 
         //Если было добавлено хотя одно очко, то считаем, что ответ верный
@@ -86,12 +86,6 @@ class Quiz {
 
     //Если вопросы кончились, этот метод проверит, какой результат получил пользователь
     End() {
-        for (let i = 0; i < this.results.length; i++) {
-            if (this.results[i].Check(this.score)) {
-                this.result = i;
-
-            }
-        }
     }
 }
 
@@ -115,11 +109,6 @@ class Answer {
     }
 }
 
-
-
-const results = [
-    new Result("Коммуникативные мотивы.", 7),
-];
 
 //Массив с вопросами
 const questions = [
@@ -267,9 +256,8 @@ const questions = [
             new Answer("Да", 0),
             new Answer("Нет", 1),
         ]),
-    new Question("Полагаете ли вы, что вам не представляет особого труда внести оживление в малознакомую группу?
-        .
-        ",      [
+    new Question("Полагаете ли вы, что вам не представляет особого труда внести оживление в малознакомую группу?.",      
+        [
             new Answer("Да", 1),
             new Answer("Нет", 0),
         ]),
@@ -364,68 +352,21 @@ function Update() {
         Init();
     } else {
         //Если это конец, то выводим результат
-        buttonsElem.innerHTML = "";
-
-        var coockieScore = 0;
         headElem.innerHTML = "";
         buttonsElem.innerHTML = "";
-        for (let i = 1; i < 6; i++) {
-            var wrap = document.createElement("div");
-            wrap.setAttribute('class', 'progressWrap');
-            progressBar.setAttribute('style', 'width:' + progressInfill + '%');
-            progressValue.innerHTML = progressInfill;
-            e = document.createElement("h3");
-            progressTitle.setAttribute('class', 'progress-title')
-            var mainDiv = document.createElement("div");
-            mainDiv.setAttribute('class', 'progress blue');
-            var progressBar = document.createElement("div");
-            progressBar.setAttribute('class', 'progress-bar');
-            var progressValue = document.createElement("div");
-            progressValue.setAttribute('class', 'progress-value');
 
-            if (i == 1) {
-                var progressInfill = getCookie("scale_1");
-                progressValue.innerHTML = "Любознательность: " + progressInfill + " из 24";
-                coockieScore += Number.parseInt(progressInfill);
-                progressInfill = Number.parseInt((progressInfill / 24) * 100);
-                progressBar.setAttribute('style', 'width:' + progressInfill + '%');
-                progressValue.innerHTML = progressInfill;
-            }
-            if (i == 2) {
-                var progressInfill = getCookie("scale_2");
-                progressValue.innerHTML = "Сложность : " + progressInfill + " из 22";
-                coockieScore += Number.parseInt(progressInfill);
-                progressInfill = Number.parseInt((progressInfill / 22) * 100);
-                progressBar.setAttribute('style', 'width:' + progressInfill + '%');
-                progressValue.innerHTML = progressInfill;
-            }
-            if (i == 3) {
-                var progressInfill = getCookie("scale_3");
-                progressValue.innerHTML = "Воображение: " + progressInfill + " из 26";
-                coockieScore += Number.parseInt(progressInfill);
-                progressInfill = Number.parseInt((progressInfill / 26) * 100);
-                progressBar.setAttribute('style', 'width:' + progressInfill + '%');
-                progressValue.innerHTML = progressInfill;
-            }
-            if (i == 4) {
-                var progressInfill = getCookie("scale_4");
-                progressValue.innerHTML = "Склонность к риску: " + progressInfill + " из 26";
-                coockieScore += Number.parseInt(progressInfill);
-                progressInfill = Number.parseInt((progressInfill / 26) * 100);
-                progressBar.setAttribute('style', 'width:' + progressInfill + '%');
-                progressValue.innerHTML = progressInfill;
-            }
-            progressBar.appendChild(progressValue);
-            mainDiv.appendChild(progressBar);
-            wrap.appendChild(progressTitle);
-            wrap.appendChild(mainDiv);
-            headElem.appendChild(wrap);
-        }
+        var communicate = getCookie("scale_1");
+        var organize = getCookie("scale_2");
 
-        let percentOf = Number.parseInt((coockieScore / 160) * 100);
-        console.log("percentOf2: " + percentOf);
-        setCookie("percentOfCoockieScore2", percentOf);
-        setCookie("end", 2);
+        //Считаем уровень коммуникативных способностей
+        let k = 0.05 * communicate;
+        let c = 0.05 * organize;
+        console.log("Уровень коммуникативных способностей: "+ k);
+        console.log("Уровень организаторских способностей: "+ c);
+        headElem.innerHTML = "Уровень развития коммуникативных способностей: "+k+"<br><br>Уровень развития организаторскиз способнойстей: "+c;
+        let percentOf = Number.parseInt((coockieScore / 40) * 100);
+        setCookie("TEST10", percentOf);
+        setCookie("TEST10_PER",40);
         pagesElem.innerHTML = "Конец теста.";
     }
 }

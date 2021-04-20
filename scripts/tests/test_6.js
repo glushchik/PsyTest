@@ -97,14 +97,6 @@ class Quiz
 	//Если вопросы кончились, этот метод проверит, какой результат получил пользователь
 	End()
 	{
-		for(let i = 0; i < this.results.length; i++)
-		{
-			if(this.results[i].Check(this.score))
-			{
-				this.result = i;
-
-			}
-		}
 	}
 } 
 
@@ -132,6 +124,32 @@ class Answer
 		this.value = value; 
 	}
 }
+//Класс, представляющий результат
+class Result 
+{
+	constructor(text, value)
+	{
+		this.text = text;
+		this.value = value;
+	}
+
+	//Этот метод проверяет, достаточно ли очков набрал пользователь
+	Check(value)
+	{
+		if(this.value <= value)
+		{
+			return true;
+		}
+		else 
+		{
+			return false;
+		}
+	}
+}
+const results = 
+[
+	new Result("Коммуникативные мотивы.", 7),
+];
 
 
 //Массив с вопросами
@@ -583,21 +601,21 @@ function Update()
 		var coockieScore = 0;
 		headElem.innerHTML = "";
 		buttonsElem.innerHTML = "";
-		for(let i = 1; i < 6; i++){
-			var wrap =  document.createElement("div");
-			wrap.setAttribute('class','progressWrap');progressBar.setAttribute('style','width:'+progressInfill+'%');
-			progressValue.innerHTML = progressInfill;e =  document.createElement("h3");
-			progressTitle.setAttribute('class','progress-title')
-			var mainDiv = document.createElement("div");
-			mainDiv.setAttribute('class','progress blue');
-			var progressBar = document.createElement("div");
-			progressBar.setAttribute('class','progress-bar');
-			var	progressValue =  document.createElement("div");
-			progressValue.setAttribute('class','progress-value');
+		for(let i = 1; i < 5; i++){
+			var wrap = document.createElement("div");
+            wrap.setAttribute('class', 'progressWrap');
+            var progressTitle = document.createElement("h3");
+            progressTitle.setAttribute('class', 'progress-title')
+            var mainDiv = document.createElement("div");
+            mainDiv.setAttribute('class', 'progress blue');
+            var progressBar = document.createElement("div");
+            progressBar.setAttribute('class', 'progress-bar');
+            var progressValue = document.createElement("div");
+            progressValue.setAttribute('class', 'progress-value');
 
 			if(i == 1){
 				var progressInfill = getCookie("scale_1");
-				progressValue.innerHTML = "Любознательность: "+progressInfill + " из 24";
+				progressTitle.innerHTML = "Любознательность: "+progressInfill + " из 24";
 				coockieScore += Number.parseInt(progressInfill);
 				progressInfill = Number.parseInt((progressInfill/24)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
@@ -605,7 +623,7 @@ function Update()
 			}
 			if(i == 2){
 				var progressInfill = getCookie("scale_2");
-				progressValue.innerHTML = "Сложность : "+progressInfill + " из 22";
+				progressTitle.innerHTML = "Сложность : "+progressInfill + " из 22";
 				coockieScore += Number.parseInt(progressInfill);
 				progressInfill = Number.parseInt((progressInfill/22)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
@@ -613,7 +631,7 @@ function Update()
 			}
 			if(i == 3){
 				var progressInfill = getCookie("scale_3");
-				progressValue.innerHTML = "Воображение: "+progressInfill + " из 26";
+				progressTitle.innerHTML = "Воображение: "+progressInfill + " из 26";
 				coockieScore += Number.parseInt(progressInfill);
 				progressInfill = Number.parseInt((progressInfill/26)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
@@ -621,7 +639,7 @@ function Update()
 			}
 			if(i == 4){
 				var progressInfill = getCookie("scale_4");
-				progressValue.innerHTML = "Склонность к риску: "+progressInfill + " из 26";
+				progressTitle.innerHTML = "Склонность к риску: "+progressInfill + " из 26";
 				coockieScore += Number.parseInt(progressInfill);
 				progressInfill = Number.parseInt((progressInfill/26)*100);
 				progressBar.setAttribute('style','width:'+progressInfill+'%');
@@ -635,9 +653,8 @@ function Update()
 		}
 
 		let percentOf = Number.parseInt((coockieScore/160)*100);
-		console.log("percentOf2: " + percentOf);
-		setCookie("percentOfCoockieScore2", percentOf);
-		setCookie("end",2);
+		setCookie("TEST4", percentOf);
+		setCookie("TEST4_PER", 450)
 		pagesElem.innerHTML = "Конец теста.";
 	}
 }
